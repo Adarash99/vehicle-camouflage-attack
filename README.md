@@ -9,12 +9,34 @@ https://github.com/user-attachments/assets/ef8c9c75-6507-4a24-9ac6-32d6fd4b9985
 
 ## Results
 
-| Metric | No Attack | DTA (CVPR 2022) | Ours |
-|--------|-----------|-----------------|------|
-| Max confidence | 0.99 | 0.34 | 0.116 |
-| Mean confidence | 0.95 | — | 0.079 |
+Detection confidence across seven detectors (360 viewpoints, 1-degree increments). Lower is better. Our attack targets only EfficientDet-D0; all others are transfer evaluation.
 
-Evaluated on EfficientDet-D0 with transfer to YOLOv5, SSD, Faster R-CNN, and Mask R-CNN.
+| Detector | Condition | Mean Conf | Max Conf | Views < 0.5 | Views < 0.1 |
+|----------|-----------|-----------|----------|-------------|-------------|
+| **EfficientDet-D0** (target) | No attack | 0.838 | 0.907 | 0% | 0% |
+| | Random texture | 0.383 | 0.847 | 60% | 27% |
+| | DTA | 0.166 | 0.666 | 91% | 50% |
+| | **Ours** | **0.071** | **0.292** | **100%** | **73%** |
+| **YOLOv5-small** | No attack | 0.895 | 0.930 | 0% | 0% |
+| | DTA | 0.109 | 0.730 | 91% | 76% |
+| | **Ours** | **0.014** | **0.512** | **100%** | **96%** |
+| **YOLOv5-medium** | No attack | 0.915 | 0.946 | 0% | 0% |
+| | DTA | 0.570 | 0.906 | 29% | 18% |
+| | **Ours** | **0.157** | **0.786** | **83%** | **70%** |
+| **YOLOv5-large** | No attack | 0.935 | 0.948 | 0% | 0% |
+| | DTA | 0.827 | 0.951 | 4% | 1% |
+| | **Ours** | **0.574** | **0.923** | **34%** | **12%** |
+| **SSD300** | No attack | 0.879 | 0.993 | 3% | 0% |
+| | DTA | 0.329 | 0.839 | 79% | 13% |
+| | **Ours** | **0.143** | **0.646** | **97%** | **44%** |
+| **Faster R-CNN** | No attack | 0.996 | 1.000 | 0% | 0% |
+| | DTA | 0.893 | 0.997 | 2% | 0% |
+| | **Ours** | **0.417** | **0.983** | **62%** | **23%** |
+| **Mask R-CNN** | No attack | 0.997 | 1.000 | 0% | 0% |
+| | DTA | 0.881 | 0.998 | 4% | 0% |
+| | **Ours** | **0.534** | **0.971** | **48%** | **5%** |
+
+Our texture outperforms DTA on all seven detectors, despite targeting only EfficientDet-D0 (DTA targets both EfficientDet-D0 and YOLOv4). Optimization completes in ~49 minutes on a single RTX 3090.
 
 ## Architecture
 
@@ -154,7 +176,7 @@ python experiments/phase1_random/train.py
 ./run.sh
 ```
 
-Training runs for 1000 iterations (~2-3 hours). Outputs are saved to `experiments/phase1_random/`:
+Training runs for 2000 iterations (~49 minutes on RTX 3090). Outputs are saved to `experiments/phase1_random/`:
 - `final/texture_final.npy` — optimised texture (16x16x3, float32, range [0, 1])
 - `final/texture_final.png` — visual preview
 - `training_log.csv` — per-iteration loss and confidence values
