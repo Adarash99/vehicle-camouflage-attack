@@ -5,10 +5,7 @@ Adversarial texture optimization that fools vehicle object detectors while produ
 The attack optimizes a coarse 16x16 texture tile that, when repeated across the vehicle surface, minimises detection confidence across multiple viewpoints, distances, weather conditions, and scene backgrounds.
 
 ## Demo
-
-https://github.com/user-attachments/assets/video.mp4
-
-<video src="video.mp4" controls width="100%"></video>
+https://github.com/user-attachments/assets/ef8c9c75-6507-4a24-9ac6-32d6fd4b9985
 
 ## Results
 
