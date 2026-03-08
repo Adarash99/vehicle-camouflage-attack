@@ -1,0 +1,2 @@
+detector,texture,ap50,max_conf,mean_conf,views_above_0.5,views_below_0.1,total_views
+yolov5s,experiments/phase2_robust_eot/final/texture_final.npy,0.04444444444444445,0.5118757486343384,0.014370566109816234,1,344,360

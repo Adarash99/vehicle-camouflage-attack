@@ -1,0 +1,2 @@
+detector,texture,ap50,max_conf,mean_conf,views_above_0.5,views_below_0.1,total_views
+yolov5m,textures/dta.npy,0.8222222222222222,0.9057414531707764,0.5702404245734215,257,64,360

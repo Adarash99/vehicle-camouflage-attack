@@ -1,0 +1,2 @@
+detector,texture,ap50,max_conf,mean_conf,views_above_0.5,views_below_0.1,total_views
+ssd,experiments/phase1_eot_pytorch/final/texture_final.npy,0.9999999999999999,0.9927045702934265,0.8786172982719209,351,0,360

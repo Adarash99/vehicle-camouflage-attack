@@ -1,0 +1,2 @@
+detector,texture,ap50,max_conf,mean_conf,views_above_0.5,views_below_0.1,total_views
+ssd,experiments/phase2_robust_eot/final/texture_final.npy,0.832209279763696,0.6464462876319885,0.14315706847442522,10,157,360

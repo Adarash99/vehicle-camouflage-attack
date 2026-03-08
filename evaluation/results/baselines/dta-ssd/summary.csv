@@ -1,0 +1,2 @@
+detector,texture,ap50,max_conf,mean_conf,views_above_0.5,views_below_0.1,total_views
+ssd,textures/dta.npy,0.957001706474469,0.8388587236404419,0.3292899824782378,77,48,360

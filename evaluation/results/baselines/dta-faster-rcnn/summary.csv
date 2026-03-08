@@ -1,0 +1,2 @@
+detector,texture,ap50,max_conf,mean_conf,views_above_0.5,views_below_0.1,total_views
+faster_rcnn,textures/dta.npy,0.9999081485781618,0.997488260269165,0.8933433821631802,353,0,360

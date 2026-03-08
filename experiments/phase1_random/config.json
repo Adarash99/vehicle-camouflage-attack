@@ -1,0 +1,44 @@
+{
+  "learning_rate": 0.01,
+  "num_iterations": 2000,
+  "checkpoint_every": 100,
+  "log_every": 10,
+  "coarse_size": 16,
+  "tile_count": 8,
+  "full_resolution": 1024,
+  "detector_input_size": 512,
+  "clip_grad_norm": 1.0,
+  "views_per_batch": 4,
+  "views_per_iteration": 12,
+  "views_to_cache": 24,
+  "spawn_weather_interval": 10,
+  "yaws": [
+    0,
+    30,
+    60,
+    90,
+    120,
+    150,
+    180,
+    210,
+    240,
+    270,
+    300,
+    330
+  ],
+  "pitches": [
+    5,
+    10,
+    15
+  ],
+  "distances": [
+    6,
+    8,
+    10,
+    12
+  ],
+  "reference_distance": 8.0,
+  "output_dir": "experiments/phase2_robust_eot/",
+  "town": "Town03",
+  "debug": true
+}

@@ -1,0 +1,2 @@
+detector,texture,ap50,max_conf,mean_conf,views_above_0.5,views_below_0.1,total_views
+mask_rcnn,experiments/phase1_eot_pytorch/final/random_texture.npy,0.9989336128422402,0.9988275170326233,0.864260563482013,316,4,360
